@@ -70,7 +70,7 @@ class _AnaEkranState extends State<AnaEkran> {
                   BlocBuilder<UrunSayisiCubit, int>(
                     builder: (context, count) {
                       return Visibility(
-                        visible: count > 0 && secilenIndex == 1 ? true : false,
+                        visible: count > 0  ? true : false,
                         child: Positioned(
                           right: 0,
                           top: 0,
