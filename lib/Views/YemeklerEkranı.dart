@@ -26,6 +26,8 @@ class YemeklerEkran extends StatefulWidget {
 class _YemeklerEkranState extends State<YemeklerEkran> {
   String? kullaniciAdi;
 
+  var _authService = AuthService();
+
   @override
   void initState() {
     super.initState();
@@ -90,7 +92,7 @@ class _YemeklerEkranState extends State<YemeklerEkran> {
             padding: const EdgeInsets.only(right: 10.0, top: 5),
             child: Stack(
               children: [
-                BlocBuilder<UrunSayisiCubit, int>(
+                /*BlocBuilder<UrunSayisiCubit, int>(
                   builder: (context, count) {
                     return Visibility(
                       visible: count > 0 ? true : false,
@@ -114,14 +116,14 @@ class _YemeklerEkranState extends State<YemeklerEkran> {
                       ),
                     );
                   },
-                ),
+                ),*/
                 IconButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Sepetim()));
+                          _authService.kullaniciCikisi();
+                          Navigator.pop(context);
                     },
                     icon: const Icon(
-                      Icons.shopping_cart_outlined,
+                      Icons.exit_to_app_outlined,
                       color: YemeklerConstants.primaryColor,
                       size: 30,
                     )),
