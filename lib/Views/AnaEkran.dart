@@ -1,19 +1,11 @@
 import 'package:bootcamp_final_project/Constants/YemeklerConstants.dart';
 import 'package:bootcamp_final_project/Cubit/SepetToplamCubit.dart';
-import 'package:bootcamp_final_project/Cubit/YemeklerCubit.dart';
-import 'package:bootcamp_final_project/Model/KullaniciBilgisi.dart';
-import 'package:bootcamp_final_project/Services/FirebaseAuth.dart';
-import 'package:bootcamp_final_project/Views/FavorilerimEkran%C4%B1.dart';
 import 'package:bootcamp_final_project/Views/SepetEkran%C4%B1.dart';
 import 'package:bootcamp_final_project/Views/YemeklerEkran%C4%B1.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../Cubit/SepetUrunSayısıCubit.dart';
-import '../Model/Yemek.dart';
-import 'YemeklerDetay.dart';
+
 
 class AnaEkran extends StatefulWidget {
   AnaEkran({Key? key}) : super(key: key);
@@ -26,14 +18,10 @@ class _AnaEkranState extends State<AnaEkran> {
 
   var secilenIndex = 0;
   var sayfaListesi = [
-    YemeklerEkran(kullaniciAdi: "UTKU"),
+    YemeklerEkran(),
     Sepetim()
   ];
 
-  void initState() {
-    super.initState();
-
-  }
 
 
   @override
